@@ -1,0 +1,65 @@
+@startuml flappybird 
+JuegoFlappyBird "1"*--"1" Bird
+JuegoFlappyBird "1"*--"1" Mano
+JuegoFlappyBird "1"*--"1" AreaJuego
+JuegoFlappyBird "1"*--"1" BotonInicio
+JuegoFlappyBird "1"*--"1" BotonReinicio
+JuegoFlappyBird "1"*--"1" Pantalla
+JuegoFlappyBird "1"*--"1" SonidoPunto
+JuegoFlappyBird "1"*--"1" PauseButon    
+JuegoFlappyBird "1"*--"1" Musica
+JuegoFlappyBird "1"*--"1" Fondo
+Fondo "1"*--"1" Suelo
+Fondo "1"*--"1" Limite
+Bird "1"*--"1" Choque
+Bird "1"*--"2" Posicion 
+Bird "1"*--"6" Color
+Bird "1"*--"2" Aceleracion
+Bird *-- SonidoVuelo
+Bird "1"*--"2" Movimiento
+Salto "1"--|>"1" Movimiento
+Caida "1"--|>"1" Movimiento
+Mano "1"*--"2" Movimiento
+AreaJuego "1"*--"1" Aceleracion
+AreaJuego "1"*--"*" Tuberia
+Jugador "1" o--"1" Bird
+Jugador "1"*--"*" Puntaje
+Class Bird(){
++Caer: Saltar(Pulso)
+}
+Class JuegoFlappyBird{
+-Bird bird
+-Mano mano
+-Tuberia tuberias[]
+-BotonInicio botonI
+-BotonReinicio botonR
+-Pantalla pantalla
+-SonidoPunto sonidoP
+-PauseButon butonPause
+-Musica musica
+-Fondo fondo
+-
+}
+Class Fondo{
+-Suelo suelo
+-Limite limie
+}
+Class Bird{
+-Movimiento movimientos[2]
+-Color colores[6]
+-SonidoVuelo sonidov
+-Choque choque
+-Posicion posiciones[2]
+-Aceleracion aceleraciones[2]
+}
+Class BotonInicio(){
++Iniciar()
+}
+Class BotonReinicio(){
++Reiniciar()
+}
+Class AreaJuego{
+-Aceleracio aceleracion
+-Tuberia tuberias[]
+}
+@enduml
