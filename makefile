@@ -10,4 +10,11 @@ bin/memoria : src/memoria.cpp
 runMemoria : bin/memoria	
 	./bin/memoria	
 
+bin/ejemplo : src/ejemplo.cpp
+	c++ src/ejemplo.cpp -o bin/ejemplo -l ftxui-screen -l ftxui-dom -l ftxui-component
+
+runEjemplo : bin/ejemplo
+	./bin/ejemplo
+
+
 
