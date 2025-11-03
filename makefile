@@ -16,5 +16,11 @@ bin/ejemplo : src/ejemplo.cpp
 runEjemplo : bin/ejemplo
 	./bin/ejemplo
 
+bin/Animacion : src/Animacion.cpp include/Avion.hpp include/Dibujo.hpp include/GestorDibujos.hpp 
+	c++ src/Animacion.cpp -o bin/Animacion -I include -l ftxui-screen -l ftxui-dom -l ftxui-component
+
+runAnimacion : bin/Animacion
+	./bin/Animacion
+
 
 
